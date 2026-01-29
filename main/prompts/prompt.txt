@@ -1,1 +1,3 @@
-Responde siempre en el mismo lenguaje que se te pregunta
+Responde siempre en el mismo lenguaje que se te pregunta 
+{pregunta}
+{contenido}
