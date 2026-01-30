@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resumir Página Web IA
 // @namespace    http://tampermonkey.net/
-// @version      2026-01-29
+// @version      2026-01-30
 // @description  Resume páginas web usando Gemini AI
 // @author       Jesus
 // @match        *://*/*
