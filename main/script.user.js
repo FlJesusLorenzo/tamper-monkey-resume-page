@@ -7,7 +7,7 @@
 // @match        *://*/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=factorlibre.com
 // @require      https://raw.githubusercontent.com/FlJesusLorenzo/tamper-monkey-imputar/refs/heads/main/main/scripts/utils.js
-// @resource     ai_prompt https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/prompts/resumen.txt
+// @resource     ai_prompt https://github.com/FlJesusLorenzo/tamper-monkey-resume-page/raw/refs/heads/main/main/prompts/prompt.txt
 // @connect      generativelanguage.googleapis.com
 // @grant        GM_setValue
 // @grant        GM_getValue
