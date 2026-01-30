@@ -7,19 +7,20 @@
 // @match        *://*/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=factorlibre.com
 // @require      https://raw.githubusercontent.com/FlJesusLorenzo/tamper-monkey-imputar/refs/heads/main/main/scripts/utils.js
-// @resource     ai_prompt https://raw.githubusercontent.com/FlJesusLorenzo/resume-page/refs/heads/main/main/prompts/prompt.txt
+// @resource     ai_prompt https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/prompts/resumen.txt
 // @connect      generativelanguage.googleapis.com
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_xmlhttpRequest
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
+// @updateURL    https://github.com/FlJesusLorenzo/tamper-monkey-resume-page/raw/refs/heads/main/main/script.user.js
+// @downloadURL  https://github.com/FlJesusLorenzo/tamper-monkey-resume-page/raw/refs/heads/main/main/script.user.js
 // ==/UserScript==
 
 (function () {
   "use strict";
 
-  // Estilos
   GM_addStyle(`
     .ia-modal-overlay {
       position: fixed;
@@ -130,8 +131,8 @@
 
     .ia-btn-trigger {
       position: fixed;
-      top: 16px;
-      left: 16px;
+      bottom: 20px;
+      right: 20px;
       z-index: 999999;
       padding: 8px 12px;
       background: #111;
@@ -146,7 +147,6 @@
     .ia-btn-trigger:hover { background: #222; }
   `);
 
-  // Pedir API key si no existe
   if (!GM_getValue("api_key")) {
     const value = prompt("Dame la clave API de Google");
     if (value) GM_setValue("api_key", value);
@@ -162,7 +162,6 @@
       return;
     }
 
-    // Crear modal
     const overlay = document.createElement("div");
     overlay.className = "ia-modal-overlay";
     overlay.innerHTML = `
@@ -182,9 +181,8 @@
     `;
 
     const resultElement = overlay.querySelector(".ia-modal-result");
-    const generateBtn = overlay.querySelector('[data-action="copy"]'); // Usamos este como "button" para la función
+    const generateBtn = overlay.querySelector('[data-action="copy"]');
 
-    // Cerrar modal
     const close = () => {
       overlay.classList.remove("visible");
       setTimeout(() => overlay.remove(), 200);
@@ -208,17 +206,14 @@
     document.body.appendChild(overlay);
     requestAnimationFrame(() => overlay.classList.add("visible"));
 
-    // Preparar prompt_info con el contenido de la página
     const pageContent = document.body.textContent.replace(/\s+/g, " ").trim();
     const promptInfo = {
       pregunta: pregunta,
       contenido: pageContent,
     };
 
-    // Crear un botón dummy para que la función maneje el estado "cargando"
     const dummyButton = document.createElement("button");
 
-    // Llamar a la función de Utils
     generateIADescription(
       apiKey,
       resultElement,
