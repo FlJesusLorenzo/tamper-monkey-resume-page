@@ -6,16 +6,16 @@
 // @author       Jesus Lorenzo
 // @match        *://*/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=factorlibre.com
-// @require      https://raw.githubusercontent.com/FlJesusLorenzo/tamper-monkey-imputar/refs/heads/main/main/scripts/utils.js
-// @resource     ai_prompt https://github.com/FlJesusLorenzo/tamper-monkey-resume-page/raw/refs/heads/main/main/prompts/prompt.txt
+// @require      https://raw.githubusercontent.com/Zarritas/tamper-monkey-imputar/refs/heads/main/main/scripts/utils.js
+// @resource     ai_prompt https://github.com/Zarritas/tamper-monkey-resume-page/raw/refs/heads/main/main/prompts/prompt.txt
 // @connect      generativelanguage.googleapis.com
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_xmlhttpRequest
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
-// @updateURL    https://github.com/FlJesusLorenzo/tamper-monkey-resume-page/raw/refs/heads/main/main/script.user.js
-// @downloadURL  https://github.com/FlJesusLorenzo/tamper-monkey-resume-page/raw/refs/heads/main/main/script.user.js
+// @updateURL    https://github.com/Zarritas/tamper-monkey-resume-page/raw/refs/heads/main/main/script.user.js
+// @downloadURL  https://github.com/Zarritas/tamper-monkey-resume-page/raw/refs/heads/main/main/script.user.js
 // ==/UserScript==
 
 (function () {
